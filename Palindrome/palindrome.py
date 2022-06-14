@@ -11,14 +11,8 @@ def is_palindrome(value: str) -> bool:
     """
     parsed_string = value.lower()
     parsed_string = ''.join(filter(str.isalpha, parsed_string))
-    position = 0
-    for c in parsed_string:
-        position = position - 1
-        if c != parsed_string[position]:
-            palindrome = False
-            break
-        palindrome = True
-    return palindrome
+    reversed_string = parsed_string[::-1]
+    return parsed_string == reversed_string
 
 
 print(is_palindrome('hello'))
